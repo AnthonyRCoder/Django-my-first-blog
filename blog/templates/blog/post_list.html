@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Ola's blog</title>
+        <title>d g blog</title>
     </head>
     <body>
         <heeader>
             <h1><a href="/">Django Girls Blog</a></h1>
         </heeader>
 
-        <article>
-            <timee>publisshed: 02.02.2022, 12.47</timee>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </article>
+        {% for post in posts %}
+            <article>
+                <timee>published: {{ post.published_date }}</timee>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </article>
+        {% endfor %}
 
-        <article>
-            <time>published: 14.06.2021, 12:14</time>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </article>
     </body>
-
 </html>
